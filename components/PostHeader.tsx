@@ -1,12 +1,12 @@
-import DateFormatter from "./date-formatter";
-import PostTitle from "./post-title";
+import { DateFormatter } from "./DateFormatter";
+import { PostTitle } from "./PostTitle";
 
 type Props = {
     title: string;
     date: string;
 };
 
-const PostHeader = ({ title, date }: Props) => {
+export const PostHeader = ({ title, date }: Props) => {
     return (
         <>
             <PostTitle>{title}</PostTitle>
@@ -18,5 +18,3 @@ const PostHeader = ({ title, date }: Props) => {
         </>
     );
 };
-
-export default PostHeader;

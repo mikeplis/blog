@@ -1,11 +1,11 @@
-import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
+import { Container } from "../components/Container";
+import { MoreStories } from "../components/MoreStories";
+import { HeroPost } from "../components/HeroPost";
+import { Intro } from "../components/Intro";
+import { Layout } from "../components/Layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
-import Post from "../types/post";
+import { Post } from "../types/post";
 
 type Props = {
     allPosts: Post[];
@@ -40,12 +40,7 @@ const Index = ({ allPosts }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
-    const allPosts = getAllPosts([
-        "title",
-        "date",
-        "slug",
-        "excerpt",
-    ]);
+    const allPosts = getAllPosts(["title", "date", "slug", "excerpt"]);
 
     return {
         props: { allPosts },

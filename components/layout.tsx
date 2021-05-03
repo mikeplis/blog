@@ -1,13 +1,13 @@
-import Alert from "./alert";
-import Footer from "./footer";
-import Meta from "./meta";
+import { Alert } from "./Alert";
+import { Footer } from "./Footer";
+import { Meta } from "./Meta";
 
 type Props = {
     preview?: boolean;
     children: React.ReactNode;
 };
 
-const Layout = ({ preview, children }: Props) => {
+export const Layout = ({ preview, children }: Props) => {
     return (
         <>
             <Meta />
@@ -19,5 +19,3 @@ const Layout = ({ preview, children }: Props) => {
         </>
     );
 };
-
-export default Layout;

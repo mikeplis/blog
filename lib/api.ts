@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import PostType from "../types/post";
+import { Post } from "../types/post";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -31,7 +31,7 @@ export function getPostSlugs() {
  * validator (with an external lib like joi or manually) and manually keep
  * is in sync with the types
  */
-export function getPostBySlug(slug: string, fields: (keyof PostType)[]) {
+export function getPostBySlug(slug: string, fields: (keyof Post)[]) {
     const realSlug = slug.replace(/\.md$/, "");
     const fullPath = join(postsDirectory, `${realSlug}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -62,7 +62,7 @@ export function getPostBySlug(slug: string, fields: (keyof PostType)[]) {
     return items;
 }
 
-export function getAllPosts(fields: (keyof PostType)[] = []) {
+export function getAllPosts(fields: (keyof Post)[] = []) {
     const slugs = getPostSlugs();
     const posts = slugs
         .map((slug) => getPostBySlug(slug, fields))

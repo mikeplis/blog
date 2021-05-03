@@ -1,4 +1,4 @@
-import DateFormatter from "./date-formatter";
+import { DateFormatter } from "./DateFormatter";
 import Link from "next/link";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
     slug: string;
 };
 
-const HeroPost = ({ title, date, excerpt, slug }: Props) => {
+export const HeroPost = ({ title, date, excerpt, slug }: Props) => {
     return (
         <section>
             <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
@@ -29,5 +29,3 @@ const HeroPost = ({ title, date, excerpt, slug }: Props) => {
         </section>
     );
 };
-
-export default HeroPost;

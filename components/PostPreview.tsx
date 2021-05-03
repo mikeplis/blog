@@ -1,4 +1,4 @@
-import DateFormatter from "./date-formatter";
+import { DateFormatter } from "./DateFormatter";
 import Link from "next/link";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
     slug: string;
 };
 
-const PostPreview = ({ title, date, excerpt, slug }: Props) => {
+export const PostPreview = ({ title, date, excerpt, slug }: Props) => {
     return (
         <div>
             <h3 className="text-3xl mb-3 leading-snug">
@@ -23,5 +23,3 @@ const PostPreview = ({ title, date, excerpt, slug }: Props) => {
         </div>
     );
 };
-
-export default PostPreview;

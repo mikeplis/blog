@@ -1,4 +1,4 @@
-import Container from "./container";
+import { Container } from "./Container";
 import cn from "classnames";
 import { EXAMPLE_PATH } from "../lib/constants";
 
@@ -6,7 +6,7 @@ type Props = {
     preview?: boolean;
 };
 
-const Alert = ({ preview }: Props) => {
+export const Alert = ({ preview }: Props) => {
     return (
         <div
             className={cn("border-b", {
@@ -44,5 +44,3 @@ const Alert = ({ preview }: Props) => {
         </div>
     );
 };
-
-export default Alert;
