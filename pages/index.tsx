@@ -25,7 +25,6 @@ const Index = ({ allPosts }: Props) => {
                     {heroPost && (
                         <HeroPost
                             title={heroPost.title}
-                            coverImage={heroPost.coverImage}
                             date={heroPost.date}
                             slug={heroPost.slug}
                             excerpt={heroPost.excerpt}
@@ -45,7 +44,6 @@ export const getStaticProps = async () => {
         "title",
         "date",
         "slug",
-        "coverImage",
         "excerpt",
     ]);
 
